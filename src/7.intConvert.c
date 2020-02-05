@@ -40,24 +40,13 @@
  */
 int intReverse_long(int x){
 	long int result = 0;
-	long int y = x;
-	int flag = 1;
 	long int num;
-	if (x < 0) {
-		flag = -1;
-		y = y * flag;
-	}
 
-	
-	num = y % HEX;
-	result = num;
-	y /= HEX;
-	while (y > 0) {
-		num = y % HEX;
+	while (x != 0) {
+		num = x % HEX;
 		result = result * HEX + num;
-		y /= HEX;
+		x /= HEX;
 	}
-	result = result * flag;
 	if (result > INT_MAX || result < INT_MIN) {
 		return 0;
 	}
